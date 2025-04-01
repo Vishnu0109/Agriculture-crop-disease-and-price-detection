@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 🌙 Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #1a202c;
+    color: #e2e8f0;
+  }
+
+  .auth-box {
+    background-color: #2d3748;
+    color: #edf2f7;
+  }
+
+  .input-style {
+    background-color: #4a5568;
+    color: white;
+    border-color: #718096;
+  }
+
+  .btn-primary {
+    background-color: #38a169;
+  }
+
+  .btn-primary:hover {
+    background-color: #2f855a;
+  }
+}
+
+/* 🌟 Input Styling */
+.input-style {
+  @apply w-full p-3 border border-gray-300 rounded-md focus:outline-none 
+         focus:ring-2 focus:ring-green-400 transition duration-300 ease-in-out;
+}
+
+/* 🔥 Primary Button */
+.btn-primary {
+  @apply w-full bg-green-500 text-white py-2 rounded-md hover:bg-green-600 
+         transition duration-300 ease-in-out transform hover:scale-105;
+}
+
+/* 🌀 Floating Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.floating {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* 🌊 Smooth Fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* 🎭 Auth Container */
+.auth-container {
+  @apply flex justify-center items-center min-h-screen bg-gradient-to-r from-green-400 to-blue-500 dark:bg-gray-900;
+}
+
+/* 📦 Auth Box */
+.auth-box {
+  @apply bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg w-96 
+         transform transition-all duration-300 hover:shadow-2xl;
+}
+
+/* ✨ Title */
+.auth-title {
+  @apply text-3xl font-semibold text-center text-gray-700 dark:text-white mb-4 fade-in;
+}
+
+/* 🌟 Link Button */
+.link-button {
+  @apply text-blue-500 dark:text-green-300 hover:underline transition duration-200;
+}
+
+/* 🌑 Dark Mode Toggle */
+.dark-mode-toggle {
+  @apply fixed top-4 right-4 bg-gray-800 text-white px-4 py-2 rounded-md shadow-lg 
+         hover:bg-gray-700 transition duration-300 cursor-pointer;
+}
+
+/* 🌙 Dark Mode Transition */
+@keyframes darkModeFade {
+  from {
+    background-color: #f8f9fa;
+    color: black;
+  }
+  to {
+    background-color: #1a202c;
+    color: white;
+  }
+}
+
+.dark-mode {
+  animation: darkModeFade 0.5s ease-in-out;
+}
