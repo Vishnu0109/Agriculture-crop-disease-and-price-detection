@@ -13,10 +13,14 @@ val_dir = "/Users/vishnu/Desktop/agri_project/datasets/raw/PlantVillage"      # 
 
 # ImageDataGenerators for loading images
 train_datagen = ImageDataGenerator(
-    rescale=1./255, 
-    horizontal_flip=True, 
+    rescale=1.0/255,
     rotation_range=20,
-    zoom_range=0.2
+    width_shift_range=0.2,
+    height_shift_range=0.2,
+    shear_range=0.2,
+    zoom_range=0.2,
+    horizontal_flip=True,
+    fill_mode='nearest'
 )
 
 val_datagen = ImageDataGenerator(rescale=1./255)
