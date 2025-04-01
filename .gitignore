@@ -1,1 +1,3 @@
 .qodo
+models/crop_model.pkl
+models/crop_recommendation.pkl
